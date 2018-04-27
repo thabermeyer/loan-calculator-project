@@ -1,0 +1,28 @@
+.calculator {
+
+    &__form {
+
+
+
+    }
+
+    &__input-line {
+
+        display: flex;
+
+    }
+
+    &__input {
+
+        width: 100%;
+        margin-bottom: 1.5rem;
+
+    }
+
+    &__btn {
+
+        width: 100%;
+
+    }
+
+}
