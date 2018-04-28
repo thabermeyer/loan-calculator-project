@@ -1,27 +1,58 @@
 .calculator {
 
+    margin-bottom: 3rem;
+
     &__form {
 
-
+        input[type=number]::-webkit-inner-spin-button, 
+        input[type=number]::-webkit-outer-spin-button { 
+          -webkit-appearance: none; 
+          margin: 0; 
+        }
 
     }
 
     &__input-line {
 
         display: flex;
+        margin-bottom: 1.5rem;
 
     }
 
     &__input {
 
         width: 100%;
-        margin-bottom: 1.5rem;
+        padding: 1rem .5rem;
+
+        font-family: inherit;
+        font-size: 1.5rem;
+
+        &:focus {
+
+            outline: none;
+
+        }
 
     }
 
     &__btn {
 
         width: 100%;
+        padding: 1.4rem;
+
+        font-family: inherit;
+        font-size: 1.5rem;
+
+        background-color: $color-primary;
+        color: #fff;
+
+        border: none;
+
+        &:hover {
+
+            background-color: $color-primary-light;
+
+        }
 
     }
 

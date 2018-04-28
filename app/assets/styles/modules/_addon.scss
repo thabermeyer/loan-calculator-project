@@ -1,5 +1,23 @@
 .addon {
 
-    
+    width: 18rem;
+
+    font-family: inherit;
+    font-size: 1.5rem;
+    align-self: center;
+
+    padding: 1.2rem;
+    background-color: $color-gray-light;
+    color: $color-gray-dark;
+    border: solid $color-gray .1rem;
+    border-right: none;
+
+    white-space: nowrap;
+
+    &__single {
+
+        width: 3.5rem;
+
+    }
 
 }

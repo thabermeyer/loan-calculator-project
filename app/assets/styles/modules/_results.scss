@@ -3,13 +3,17 @@
     &__output-line {
 
         display: flex;
+        margin-bottom: 1.5rem;
 
     }
 
     &__output {
 
         width: 100%;
-        margin-bottom: 1.5rem;
+        padding: 1rem 0;
+
+        font-family: inherit;
+        font-size: 1.5rem;
 
     }
 
