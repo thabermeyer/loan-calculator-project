@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>Loan Calculator</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/styles/styles-e0a7c43fd2.css"/>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="calculator">
+
+            <h1 class="heading-1 u-center-text header">Loan Calculator</h1>
+    
+            <form class="calculator__form">
+    
+                <div class="calculator__input-line">
+
+                    <span class="addon addon__single">$</span>
+                    <input type="number" id="amount" class="calculator__input" placeholder="Loan Amount" step="0.01">
+
+                </div>
+
+                <div class="calculator__input-line">
+
+                    <span class="addon addon__single">%</span>
+                    <input type="number" id="interest" class="calculator__input" placeholder="Annual Interest" step="0.01">
+
+                </div>
+
+                <div class="calculator__input-line">
+
+                    <span class="addon addon__single">Y</span>
+                    <input type="number" id="years" class="calculator__input" placeholder="Repayment Years" step="0.01">
+
+                </div>
+    
+                <!-- <input type="submit" class="calculator__btn calculator__btn-calc" value="Calculate"></input> -->
+
+                <button class="calculator__btn calculator__btn-calc u-margin-bottom">Calculate</button>
+    
+            </form>
+    
+        </div>
+        
+        <div class="loader">
+
+            <img src="assets/images/loading.gif" alt="Loading" class="loader__image">
+
+        </div>
+    
+        <div class="results">
+    
+            <h2 class="heading-2 u-center-text">Results</h2>
+    
+            <div class="results__output-line">
+
+                <span class="addon">Monthly Payment</span><span class="addon addon__single">$</span>
+                <input type="number" id="monthly-payment" class="results__output" disabled>
+
+            </div>
+
+            <div class="results__output-line">
+
+                <span class="addon">Total Payment</span><span class="addon addon__single">$</span>
+                <input type="number" id="total-payment" class="results__output" disabled>
+
+            </div>
+
+            <div class="results__output-line">
+
+                <span class="addon">Total Interest</span><span class="addon addon__single">$</span>
+                <input type="number" id="total-interest" class="results__output" disabled>
+
+            </div>
+    
+        </div>
+
+    </div>
+
+    <script src="assets/scripts/App-1201f18b41.js"></script>
+    
+</body>
+
+</html>

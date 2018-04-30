@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var del = require('del');
+var imagemin = require('gulp-imagemin');
 var usemin = require('gulp-usemin');
 var rev = require('gulp-rev');
 var cssnano = require('gulp-cssnano');
@@ -34,6 +35,16 @@ gulp.task('copyGeneralFiles', ['deleteDistFolder'], function() {
     .pipe(gulp.dest("./docs/"));
 });
 
+gulp.task('optimizeImages', ['deleteDistFolder'], function() {
+  return gulp.src(['./app/assets/images/**/*'])
+    .pipe(imagemin({
+      progressive: true,
+      interlaced: true,
+      multipass: true
+    }))
+    .pipe(gulp.dest("./docs/assets/images"));
+});
+
 gulp.task('useminTrigger', ['deleteDistFolder'], function() {
   gulp.start("usemin");
 });
@@ -47,4 +58,4 @@ gulp.task('usemin', ['styles', 'scripts'], function() {
     .pipe(gulp.dest("./docs"));
 });
 
-gulp.task('build', ['deleteDistFolder', 'copyGeneralFiles', 'useminTrigger']);
+gulp.task('build', ['deleteDistFolder', 'copyGeneralFiles', 'optimizeImages', 'useminTrigger']);
