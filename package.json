@@ -21,8 +21,5 @@
     "node-sass": "^4.8.3",
     "webpack": "^3.8.1",
     "webpack-dev-server": "^2.9.4"
-  },
-  "dependencies": {
-    "font-awesome": "^4.7.0"
   }
 }
