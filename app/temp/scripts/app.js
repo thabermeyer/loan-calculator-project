@@ -9034,7 +9034,20 @@ module.exports = function (regExp, replace) {
 
 // Listen for submit
 
-document.querySelector('.calculator__form').addEventListener('submit', calculateResults);
+document.querySelector('.calculator__btn-calc').addEventListener('click', function (e) {
+
+    // Hide resulsts
+
+    document.querySelector('.results').style.display = 'none';
+
+    // Show loader
+
+    document.querySelector('.loader').classList.add('loader--visible');
+
+    setTimeout(calculateResults, 1000);
+
+    e.preventDefault();
+});
 
 function calculateResults(e) {
 
@@ -9062,12 +9075,68 @@ function calculateResults(e) {
         monthlyPayment.value = monthly.toFixed(2);
         totalPayment.value = (monthly * calculatedPayments).toFixed(2);
         totalInterest.value = (monthly * calculatedPayments - principal).toFixed(2);
+
+        // Show results
+
+        document.querySelector('.results').style.display = 'block';
+
+        // Hide loader
+
+        document.querySelector('.loader').classList.remove('loader--visible');
+
+        // Add clear button
+
+        var calcBtn = document.querySelector('.calculator__btn');
+
+        var clearBtn = document.createElement('button');
+        clearBtn.className = 'calculator__btn calculator__btn-clear';
+        clearBtn.appendChild(document.createTextNode('Clear'));
+        calcBtn.parentNode.insertBefore(clearBtn, calcBtn.nextSibling);
     } else {
 
-        console.log('Please check your numbers');
+        showError('Unable to calculate. Please check all fields.');
     }
+}
 
-    e.preventDefault();
+// Show error
+
+function showError(error) {
+
+    // Hide results
+
+    document.querySelector('.results').style.display = 'none';
+
+    // Hide loader
+
+    document.querySelector('.loader').classList.remove('loader--visible');
+
+    // Create div
+
+    var errorDiv = document.createElement('div');
+
+    // Get elements
+
+    var calculator = document.querySelector('.calculator');
+    var header = document.querySelector('.header');
+
+    // Add class
+
+    errorDiv.className = 'alert alert--danger';
+
+    // Create text node and append to div
+
+    errorDiv.appendChild(document.createTextNode(error));
+
+    // Insert error above heading
+
+    calculator.insertBefore(errorDiv, header);
+
+    // Clear error after a few seconds
+
+    setTimeout(function () {
+
+        document.querySelector('.alert').remove();
+    }, 3000);
 }
 
 /***/ })

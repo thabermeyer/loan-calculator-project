@@ -54,9 +54,23 @@
 
         border: none;
 
+        transition: all .2s;
+
         &:hover {
 
             background-color: $color-primary-light;
+
+        }
+
+        &-clear {
+
+            background-color: $color-primary-light;
+
+            &:hover {
+
+                background-color: $color-primary;
+
+            }
 
         }
 

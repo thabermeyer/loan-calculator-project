@@ -22,7 +22,7 @@
 
         <div class="calculator">
 
-            <h1 class="heading-1 u-center-text">Loan Calculator</h1>
+            <h1 class="heading-1 u-center-text header">Loan Calculator</h1>
     
             <form class="calculator__form">
     
@@ -47,21 +47,19 @@
 
                 </div>
     
-                <input type="submit" class="calculator__btn" value="Calculate"></input>
+                <!-- <input type="submit" class="calculator__btn calculator__btn-calc" value="Calculate"></input> -->
+
+                <button class="calculator__btn calculator__btn-calc u-margin-bottom">Calculate</button>
     
             </form>
     
         </div>
-
-        <!--
         
-        <div class="loading">
+        <div class="loader">
 
-            <img src="" alt="Loading">
+            <img src="assets/images/loading.gif" alt="Loading" class="loader__image">
 
         </div>
-
-        -->
     
         <div class="results">
     
@@ -69,21 +67,21 @@
     
             <div class="results__output-line">
 
-                <span class="addon">Monthly Payment</span>
+                <span class="addon">Monthly Payment</span><span class="addon addon__single">$</span>
                 <input type="number" id="monthly-payment" class="results__output" disabled>
 
             </div>
 
             <div class="results__output-line">
 
-                <span class="addon">Total Payment</span>
+                <span class="addon">Total Payment</span><span class="addon addon__single">$</span>
                 <input type="number" id="total-payment" class="results__output" disabled>
 
             </div>
 
             <div class="results__output-line">
 
-                <span class="addon">Total Interest</span>
+                <span class="addon">Total Interest</span><span class="addon addon__single">$</span>
                 <input type="number" id="total-interest" class="results__output" disabled>
 
             </div>
